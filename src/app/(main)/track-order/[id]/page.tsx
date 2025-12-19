@@ -29,6 +29,7 @@ export default function OrderTrackingPage() {
   const searchParams = useSearchParams();
   const itemName = searchParams.get('item');
   const itemPrice = searchParams.get('price');
+  const paymentMethod = searchParams.get('paymentMethod');
   const [zoomLevel, setZoomLevel] = useState(1);
   
   const [timeline, setTimeline] = useState([
@@ -59,6 +60,16 @@ export default function OrderTrackingPage() {
   const subtotal = parseFloat(itemPrice || '0');
   const taxes = subtotal * 0.05; // 5% tax
   const total = subtotal + taxes;
+
+  const getPaymentMethodLabel = () => {
+    if (paymentMethod === 'cod') {
+      return 'Cash on Delivery';
+    }
+    if (paymentMethod === 'online') {
+      return 'Paid Online';
+    }
+    return 'N/A';
+  }
 
   return (
     <div className="grid gap-8 lg:grid-cols-3">
@@ -144,7 +155,7 @@ export default function OrderTrackingPage() {
             </div>
           </CardContent>
           <CardFooter>
-            <Badge variant="secondary">Payment: Cash on Delivery</Badge>
+            <Badge variant="secondary">Payment: {getPaymentMethodLabel()}</Badge>
           </CardFooter>
         </Card>
       </div>

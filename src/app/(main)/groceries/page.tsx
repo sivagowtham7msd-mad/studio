@@ -31,14 +31,14 @@ export default function GroceriesPage() {
     setSelectedProduct(product);
   };
 
-  const handlePayment = () => {
+  const handlePayment = (paymentMethod: string) => {
     if (!selectedProduct) return;
     toast({
         title: "Order Placed!",
         description: `Your order for ${selectedProduct.name} has been placed successfully.`,
     });
     const orderId = `groc-${Math.random().toString(36).substring(2, 9)}`;
-    router.push(`/track-order/${orderId}?item=${selectedProduct.name}&price=${selectedProduct.price}`);
+    router.push(`/track-order/${orderId}?item=${selectedProduct.name}&price=${selectedProduct.price}&paymentMethod=${paymentMethod}`);
     setSelectedProduct(null);
   }
 

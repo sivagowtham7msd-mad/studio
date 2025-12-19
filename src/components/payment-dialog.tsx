@@ -20,7 +20,7 @@ interface PaymentDialogProps {
   product: Product;
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onProceed: () => void;
+  onProceed: (paymentMethod: string) => void;
 }
 
 const upiApps = ["Google Pay", "PhonePe"];
@@ -34,9 +34,13 @@ export function PaymentDialog({ product, open, onOpenChange, onProceed }: Paymen
     if (paymentMethod === 'online' && step === 1) {
       setStep(2);
     } else {
-      onProceed();
+      onProceed(paymentMethod);
     }
   };
+
+  const handleOnlinePayment = () => {
+    onProceed('online');
+  }
 
   const renderStep1 = () => (
     <>
@@ -90,7 +94,7 @@ export function PaymentDialog({ product, open, onOpenChange, onProceed }: Paymen
             <h3 className="mb-2 font-semibold">UPI Apps</h3>
             <div className="grid grid-cols-2 gap-2">
                 {upiApps.map(app => (
-                    <Button key={app} variant="outline" onClick={onProceed}>{app}</Button>
+                    <Button key={app} variant="outline" onClick={handleOnlinePayment}>{app}</Button>
                 ))}
             </div>
         </div>
@@ -99,7 +103,7 @@ export function PaymentDialog({ product, open, onOpenChange, onProceed }: Paymen
             <h3 className="mb-2 font-semibold">Banking Apps</h3>
             <div className="grid grid-cols-2 gap-2">
                 {bankingApps.map(app => (
-                    <Button key={app} variant="outline" onClick={onProceed}>{app}</Button>
+                    <Button key={app} variant="outline" onClick={handleOnlinePayment}>{app}</Button>
                 ))}
             </div>
         </div>
