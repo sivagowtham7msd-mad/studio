@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,6 +6,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star, MapPin } from "lucide-react";
 import { doctors } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Link from "next/link";
+import { useState } from "react";
 
 function getImageUrl(id: string) {
   const image = PlaceHolderImages.find((img) => img.id === id);
@@ -14,6 +17,8 @@ function getImageUrl(id: string) {
 const mapPlaceholder = getImageUrl('map-placeholder');
 
 export default function DoctorsPage() {
+  const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
+
   return (
     <div className="flex flex-col gap-8">
       <div>
@@ -40,7 +45,11 @@ export default function DoctorsPage() {
                       <span>{doctor.rating} ({doctor.reviews} reviews)</span>
                     </div>
                   </div>
-                  <Button>Book Now</Button>
+                  <Link href="/orders/doc-booking-123" passHref>
+                    <Button onClick={() => setSelectedDoctor(doctor.id)}>
+                      Book Now
+                    </Button>
+                  </Link>
                 </Card>
               );
             })}
