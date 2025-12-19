@@ -14,7 +14,7 @@ function getImageUrl(id: string) {
   return image ? { url: image.imageUrl, hint: image.imageHint } : { url: 'https://picsum.photos/seed/placeholder/400/400', hint: 'placeholder item' };
 }
 
-const mapPlaceholder = getImageUrl('map-placeholder');
+const mapPlaceholder = getImageUrl('india-map');
 
 export default function DoctorsPage() {
   const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
@@ -62,15 +62,15 @@ export default function DoctorsPage() {
               <div className="relative w-full h-full min-h-[400px] rounded-lg overflow-hidden">
                 <Image
                   src={mapPlaceholder.url}
-                  alt="Map placeholder"
+                  alt="Map of India"
                   fill
                   className="object-cover"
                   data-ai-hint={mapPlaceholder.hint}
                 />
                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center flex-col text-white p-4 text-center">
                     <MapPin className="w-12 h-12 mb-4" />
-                    <h3 className="text-xl font-bold">Map View</h3>
-                    <p>Select your location on the map</p>
+                    <h3 className="text-xl font-bold">Select Location</h3>
+                    <p>Our services are available across India.</p>
                 </div>
               </div>
             </CardContent>
