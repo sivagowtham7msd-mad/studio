@@ -1,33 +1,79 @@
+'use client';
+import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { JobDescriptionGenerator } from "./_components/job-description-generator";
 import { JobSearchSummary } from "./_components/job-search-summary";
-import { jobs } from "@/lib/data";
+import { jobs as allJobs, type Job } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Search } from 'lucide-react';
 
 export default function JobsPage() {
+  const [jobs, setJobs] = useState<Job[]>(allJobs);
+  const [location, setLocation] = useState('');
+  const [filteredJobs, setFilteredJobs] = useState<Job[]>(allJobs);
+
+  const handleSearch = () => {
+    if (location.trim() === '') {
+      setFilteredJobs(jobs);
+    } else {
+      const lowerCaseLocation = location.toLowerCase();
+      const results = jobs.filter(job => 
+        job.location.toLowerCase().includes(lowerCaseLocation)
+      );
+      setFilteredJobs(results);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Saviour Job Finder</h1>
         <p className="text-muted-foreground">Discover opportunities and use AI tools to get ahead.</p>
       </div>
-      <Tabs defaultValue="tools" className="w-full">
+      <Tabs defaultValue="listings" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="tools">AI Job Tools</TabsTrigger>
           <TabsTrigger value="listings">Job Listings</TabsTrigger>
+          <TabsTrigger value="tools">AI Job Tools</TabsTrigger>
         </TabsList>
-        <TabsContent value="tools" className="mt-6">
-          <div className="grid gap-8 lg:grid-cols-2">
-            <JobSearchSummary />
-            <JobDescriptionGenerator />
-          </div>
-        </TabsContent>
         <TabsContent value="listings" className="mt-6">
           <div className="flex flex-col gap-6">
-            <h2 className="text-2xl font-bold font-headline">Current Openings</h2>
-            {jobs.map((job) => (
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-bold font-headline">Current Openings</h2>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline"><Search className="mr-2 h-4 w-4"/>Find Jobs</Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Find Jobs by Location</DialogTitle>
+                    <DialogDescription>Enter a state or district to find jobs near you.</DialogDescription>
+                  </DialogHeader>
+                  <div className="grid gap-4 py-4">
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="location-search" className="text-right">
+                        Location
+                      </Label>
+                      <Input
+                        id="location-search"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                        className="col-span-3"
+                        placeholder="e.g., Chennai or Tamil Nadu"
+                      />
+                    </div>
+                  </div>
+                  <DialogFooter>
+                    <Button onClick={handleSearch}>Search</Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
+            </div>
+            {filteredJobs.map((job) => (
               <Card key={job.id}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
@@ -47,6 +93,15 @@ export default function JobsPage() {
                 </CardFooter>
               </Card>
             ))}
+             {filteredJobs.length === 0 && (
+              <p className="text-muted-foreground text-center">No jobs found for the specified location.</p>
+            )}
+          </div>
+        </TabsContent>
+        <TabsContent value="tools" className="mt-6">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <JobSearchSummary />
+            <JobDescriptionGenerator />
           </div>
         </TabsContent>
       </Tabs>
