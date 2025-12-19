@@ -103,6 +103,12 @@
       "imageHint": "map city"
     },
     {
+      "id": "india-map",
+      "description": "A map of India",
+      "imageUrl": "https://images.unsplash.com/photo-1599827559622-2436852554e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "India map"
+    },
+    {
       "id": "medplus-logo",
       "description": "MedPlus Logo",
       "imageUrl": "https://images.unsplash.com/photo-1704204656144-3dd12c110dd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",

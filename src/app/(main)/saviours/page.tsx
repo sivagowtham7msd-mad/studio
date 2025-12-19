@@ -5,11 +5,14 @@ import { saviours } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { MapPin } from "lucide-react";
 
 function getImageUrl(id: string) {
   const image = PlaceHolderImages.find((img) => img.id === id);
   return image ? { url: image.imageUrl, hint: image.imageHint } : { url: 'https://picsum.photos/seed/placeholder/200/200', hint: 'placeholder logo' };
 }
+
+const indiaMapPlaceholder = getImageUrl('india-map');
 
 export default function SavioursPage() {
   const medicineSaviours = saviours.filter(s => s.category === 'Medicine');
@@ -19,8 +22,26 @@ export default function SavioursPage() {
     <div className="flex flex-col gap-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Our Saviours</h1>
-        <p className="text-muted-foreground">Meet the partners who help us serve you.</p>
+        <p className="text-muted-foreground">Meet the partners who help us serve you across India.</p>
       </div>
+      <Card>
+        <CardContent className="p-0 h-96">
+            <div className="relative w-full h-full rounded-lg overflow-hidden">
+                <Image
+                src={indiaMapPlaceholder.url}
+                alt="Map of India"
+                fill
+                className="object-cover"
+                data-ai-hint={indiaMapPlaceholder.hint}
+                />
+                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center flex-col text-white p-4 text-center">
+                    <MapPin className="w-12 h-12 mb-4" />
+                    <h3 className="text-xl font-bold">Serving Nationwide</h3>
+                    <p>Our saviours are available across the country.</p>
+                </div>
+            </div>
+        </CardContent>
+      </Card>
       <Tabs defaultValue="medicine" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="medicine">Medicine Partners</TabsTrigger>
