@@ -14,8 +14,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from 'next/link';
 
-export function AppHeader() {
+function AppHeaderContent() {
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
       <div className="flex items-center gap-2">
@@ -30,10 +31,12 @@ export function AppHeader() {
       </Tabs>
 
       <div className="ml-auto flex items-center gap-4">
-        <Button variant="ghost" size="icon" className="rounded-full">
-          <ShoppingCart className="h-5 w-5" />
-          <span className="sr-only">Shopping Cart</span>
-        </Button>
+        <Link href="/orders/123-abc">
+            <Button variant="ghost" size="icon" className="rounded-full">
+            <ShoppingCart className="h-5 w-5" />
+            <span className="sr-only">Shopping Cart</span>
+            </Button>
+        </Link>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="rounded-full">
@@ -44,8 +47,8 @@ export function AppHeader() {
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>My Orders</DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/profile">Profile</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/orders/123-abc">My Orders</Link></DropdownMenuItem>
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Logout</DropdownMenuItem>
@@ -54,4 +57,15 @@ export function AppHeader() {
       </div>
     </header>
   );
+}
+
+
+export function AppHeader() {
+  const [isClient, setIsClient] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  return isClient ? <AppHeaderContent /> : null;
 }
