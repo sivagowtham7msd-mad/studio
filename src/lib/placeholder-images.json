@@ -1,3 +1,106 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "doctor1",
+      "description": "A friendly male doctor",
+      "imageUrl": "https://images.unsplash.com/photo-1615177393114-bd2917a4f74a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N0b3IlMjBtYWxlfGVufDB8fHx8MTc2NjE1OTgyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor male"
+    },
+    {
+      "id": "doctor2",
+      "description": "A compassionate female doctor",
+      "imageUrl": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBmZW1hbGV8ZW58MHx8fHwxNzY2MTU5ODI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor female"
+    },
+    {
+      "id": "doctor3",
+      "description": "A professional female dermatologist",
+      "imageUrl": "https://images.unsplash.com/photo-1666886573681-a8fbe983a3fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb2N0b3IlMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzY2MDg0MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor professional"
+    },
+    {
+      "id": "doctor4",
+      "description": "An experienced male cardiologist",
+      "imageUrl": "https://images.unsplash.com/photo-1758691461516-7e716e0ca135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkb2N0b3IlMjBzZW5pb3J8ZW58MHx8fHwxNzY2MTQ1NDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor senior"
+    },
+    {
+      "id": "medicine1",
+      "description": "A box of paracetamol pills",
+      "imageUrl": "https://images.unsplash.com/photo-1597068596627-717bd7124319?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwaWxscyUyMG1lZGljaW5lfGVufDB8fHx8MTc2NjEyNzk2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pills medicine"
+    },
+    {
+      "id": "medicine2",
+      "description": "A box of ibuprofen pills",
+      "imageUrl": "https://images.unsplash.com/photo-1711985220359-a29722407593?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWRpY2luZSUyMGJveHxlbnwwfHx8fDE3NjYwNjY4MzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medicine box"
+    },
+    {
+      "id": "medicine3",
+      "description": "A bottle of antacid syrup",
+      "imageUrl": "https://images.unsplash.com/photo-1700104494894-4b03ae4f5953?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzeXJ1cCUyMGJvdHRsZXxlbnwwfHx8fDE3NjYxNTk4MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "syrup bottle"
+    },
+    {
+      "id": "medicine4",
+      "description": "A bottle of cough syrup",
+      "imageUrl": "https://images.unsplash.com/photo-1664216294580-079bc527ae49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2luZSUyMGJvdHRsZXxlbnwwfHx8fDE3NjYxNTk4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medicine bottle"
+    },
+    {
+      "id": "medicine5",
+      "description": "A bottle of vitamin C tablets",
+      "imageUrl": "https://images.unsplash.com/photo-1722843068552-3f4cf64164f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx2aXRhbWlucyUyMGJvdHRsZXxlbnwwfHx8fDE3NjYwNjQ4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vitamins bottle"
+    },
+    {
+      "id": "medicine6",
+      "description": "A box of band-aids",
+      "imageUrl": "https://images.unsplash.com/photo-1531054601929-f1ccb3ef57f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxiYW5kJTIwYWlkfGVufDB8fHx8MTc2NjE1OTgyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "band aid"
+    },
+    {
+      "id": "grocery1",
+      "description": "A carton of milk",
+      "imageUrl": "https://images.unsplash.com/photo-1549127024-18ee7271c819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWlsayUyMGNhcnRvbnxlbnwwfHx8fDE3NjYxMzk4MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "milk carton"
+    },
+    {
+      "id": "grocery2",
+      "description": "A loaf of brown bread",
+      "imageUrl": "https://images.unsplash.com/photo-1621930600086-aa547aad836a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxicmVhZCUyMGxvYWZ8ZW58MHx8fHwxNzY2MDY1MTE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bread loaf"
+    },
+    {
+      "id": "grocery3",
+      "description": "A pile of organic apples",
+      "imageUrl": "https://images.unsplash.com/photo-1707483106908-095bd7ac0f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXBwbGVzJTIwZnJ1aXR8ZW58MHx8fHwxNzY2MDU2NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "apples fruit"
+    },
+    {
+      "id": "grocery4",
+      "description": "A carton of eggs",
+      "imageUrl": "https://images.unsplash.com/photo-1585355611444-06154f329e96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlZ2dzJTIwY2FydG9ufGVufDB8fHx8MTc2NjA1NjI3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "eggs carton"
+    },
+    {
+      "id": "grocery5",
+      "description": "A block of cheddar cheese",
+      "imageUrl": "https://images.unsplash.com/photo-1590912710024-6d51a6771abd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGVlc2UlMjBibG9ja3xlbnwwfHx8fDE3NjYxMTU3OTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cheese block"
+    },
+    {
+      "id": "grocery6",
+      "description": "A bag of basmati rice",
+      "imageUrl": "https://images.unsplash.com/photo-1563249894-7aad9916d1ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyaWNlJTIwYmFnfGVufDB8fHx8MTc2NjA4NDA5OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rice bag"
+    },
+    {
+      "id": "map-placeholder",
+      "description": "A map showing a delivery route",
+      "imageUrl": "https://images.unsplash.com/photo-1717700299588-ee73dc7de1fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYXAlMjBjaXR5fGVufDB8fHx8MTc2NjEzMDYwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "map city"
+    }
+  ]
 }
