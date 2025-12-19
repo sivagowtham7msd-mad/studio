@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 import {
   Card,
   CardContent,
@@ -24,7 +25,8 @@ function getImageUrl(id: string) {
 
 const mapPlaceholder = getImageUrl('map-placeholder');
 
-export default function OrderTrackingPage({ params }: { params: { id: string } }) {
+export default function OrderTrackingPage() {
+  const params = useParams<{ id: string }>();
   const { toast } = useToast();
   const [otp, setOtp] = useState<string[]>(Array(4).fill(""));
   const [generatedOtp, setGeneratedOtp] = useState<string>("");

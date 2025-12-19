@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useParams } from 'next/navigation';
 import {
   Card,
   CardContent,
@@ -24,7 +24,8 @@ function getImageUrl(id: string) {
 
 const mapPlaceholder = getImageUrl('map-placeholder');
 
-export default function OrderTrackingPage({ params }: { params: { id: string } }) {
+export default function OrderTrackingPage() {
+  const params = useParams<{ id: string }>();
   const searchParams = useSearchParams();
   const itemName = searchParams.get('item');
   const itemPrice = searchParams.get('price');
