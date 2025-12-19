@@ -62,7 +62,7 @@ export function JobSearchSummary() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="location">Your Location</Label>
-            <Input id="location" {...register('location')} placeholder="e.g., San Francisco, CA" />
+            <Input id="location" {...register('location')} placeholder="e.g., Mumbai, MH" />
             {errors.location && <p className="text-sm text-destructive">{errors.location.message}</p>}
           </div>
         </CardContent>

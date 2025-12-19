@@ -36,7 +36,7 @@ export default function ProfilePage() {
                     </div>
                      <div className="space-y-2">
                         <Label htmlFor="address">Address</Label>
-                        <Input id="address" defaultValue="123 Main St, Anytown, USA" />
+                        <Input id="address" defaultValue="123, Anna Salai, Chennai, Tamil Nadu" />
                     </div>
                 </CardContent>
             </Card>

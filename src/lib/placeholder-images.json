@@ -4,25 +4,25 @@
       "id": "doctor1",
       "description": "A friendly male doctor",
       "imageUrl": "https://images.unsplash.com/photo-1615177393114-bd2917a4f74a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N0b3IlMjBtYWxlfGVufDB8fHx8MTc2NjE1OTgyNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "doctor male"
+      "imageHint": "indian doctor"
     },
     {
       "id": "doctor2",
       "description": "A compassionate female doctor",
       "imageUrl": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBmZW1hbGV8ZW58MHx8fHwxNzY2MTU5ODI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "doctor female"
+      "imageHint": "indian doctor"
     },
     {
       "id": "doctor3",
       "description": "A professional female dermatologist",
       "imageUrl": "https://images.unsplash.com/photo-1666886573681-a8fbe983a3fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb2N0b3IlMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzY2MDg0MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "doctor professional"
+      "imageHint": "professional doctor"
     },
     {
       "id": "doctor4",
       "description": "An experienced male cardiologist",
       "imageUrl": "https://images.unsplash.com/photo-1758691461516-7e716e0ca135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkb2N0b3IlMjBzZW5pb3J8ZW58MHx8fHwxNzY2MTQ1NDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "doctor senior"
+      "imageHint": "senior doctor"
     },
     {
       "id": "medicine1",
@@ -69,7 +69,7 @@
     {
       "id": "grocery2",
       "description": "A loaf of brown bread",
-      "imageUrl": "https://images.unsplash.com/photo-1621930600086-aa547aad836a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxicmVhZCUyMGxvYWZ8ZW58MHx8fHwxNzY2MDY1MTE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1621930600086-aa547aad836a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxicmVhZCUyMGxvYWZ8ZW58MHx8fHwxNzY2MDYxMTE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "bread loaf"
     },
     {
@@ -112,31 +112,31 @@
       "id": "medplus-logo",
       "description": "MedPlus Logo",
       "imageUrl": "https://images.unsplash.com/photo-1704204656144-3dd12c110dd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo brand"
+      "imageHint": "pharmacy logo"
     },
     {
       "id": "pharmeasy-logo",
       "description": "PharmEasy Logo",
       "imageUrl": "https://images.unsplash.com/photo-1764229119403-42059dac36a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo brand"
+      "imageHint": "pharmacy logo"
     },
     {
       "id": "apollo-logo",
       "description": "Apollo Pharmacy Logo",
       "imageUrl": "https://images.unsplash.com/photo-1704204656144-3dd12c110dd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo brand"
+      "imageHint": "pharmacy logo"
     },
     {
       "id": "instamart-logo",
       "description": "Swiggy Instamart Logo",
       "imageUrl": "https://images.unsplash.com/photo-1738458786007-03c0c4b7a804?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo brand"
+      "imageHint": "delivery logo"
     },
     {
       "id": "zepto-logo",
       "description": "Zepto Logo",
       "imageUrl": "https://images.unsplash.com/photo-1596699528543-c2413ccc79f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo brand"
+      "imageHint": "delivery logo"
     }
   ]
 }

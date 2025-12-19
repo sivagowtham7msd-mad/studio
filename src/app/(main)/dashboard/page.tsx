@@ -33,7 +33,7 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col gap-8">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Welcome to StreetVerse</h1>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">Welcome to All in one app</h1>
         <p className="text-muted-foreground">Your all-in-one platform for local services and opportunities.</p>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
