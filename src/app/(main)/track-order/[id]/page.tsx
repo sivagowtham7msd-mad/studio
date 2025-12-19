@@ -25,7 +25,7 @@ function getImageUrl(id: string) {
 const mapPlaceholder = getImageUrl('map-placeholder');
 
 export default function OrderTrackingPage() {
-  const params = useParams<{ id: string }>();
+  const params = useParams();
   const searchParams = useSearchParams();
   const itemName = searchParams.get('item');
   const itemPrice = searchParams.get('price');
@@ -33,12 +33,17 @@ export default function OrderTrackingPage() {
   const [zoomLevel, setZoomLevel] = useState(1);
   
   const [timeline, setTimeline] = useState([
-    { status: 'Order Placed', date: new Date().toLocaleString(), icon: Package, done: true },
+    { status: 'Order Placed', date: '', icon: Package, done: true },
     { status: 'Out for Delivery', date: 'In progress...', icon: Truck, done: false },
     { status: 'Delivered', date: 'Awaiting delivery', icon: Home, done: false },
   ]);
 
   useEffect(() => {
+    // Set initial date on client
+    setTimeline(prev => prev.map(item => 
+      item.status === 'Order Placed' ? { ...item, date: new Date().toLocaleString() } : item
+    ));
+
     const deliveryTimeout = setTimeout(() => {
       setTimeline(prev => prev.map(item => 
         item.status === 'Out for Delivery' ? { ...item, done: true, date: new Date().toLocaleString() } : item
@@ -76,7 +81,7 @@ export default function OrderTrackingPage() {
       <div className="lg:col-span-2 space-y-8">
         <div>
             <h1 className="text-3xl font-bold tracking-tight font-headline">Order Tracking</h1>
-            <p className="text-muted-foreground">Order ID: #{params.id}</p>
+            <p className="text-muted-foreground">Order ID: #{typeof params.id === 'string' ? params.id : ''}</p>
         </div>
         
         <Card>

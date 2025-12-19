@@ -26,14 +26,19 @@ function getImageUrl(id: string) {
 const mapPlaceholder = getImageUrl('map-placeholder');
 
 export default function OrderTrackingPage() {
-  const params = useParams<{ id: string }>();
+  const params = useParams();
   const { toast } = useToast();
   const [otp, setOtp] = useState<string[]>(Array(4).fill(""));
   const [generatedOtp, setGeneratedOtp] = useState<string>("");
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [timeline, setTimeline] = useState([
+    { status: 'Booking Placed', date: '', icon: Package, done: true },
+    { status: 'Doctor on the way', date: '', icon: Truck, done: true },
+    { status: 'Doctor Arrived', date: 'Awaiting Confirmation', icon: Home, done: false },
+  ]);
 
   useEffect(() => {
-    // Simulate OTP generation
+    // Simulate OTP generation and set initial dates on client
     const newOtp = Math.floor(1000 + Math.random() * 9000).toString();
     setGeneratedOtp(newOtp);
 
@@ -41,13 +46,17 @@ export default function OrderTrackingPage() {
       title: "Booking Confirmed!",
       description: `Your OTP for the doctor's visit is ${newOtp}.`,
     });
-  }, [toast]);
 
-  const timeline = [
-    { status: 'Booking Placed', date: 'June 25, 2024, 10:30 AM', icon: Package, done: true },
-    { status: 'Doctor on the way', date: 'June 25, 2024, 11:00 AM', icon: Truck, done: true },
-    { status: 'Doctor Arrived', date: 'Awaiting Confirmation', icon: Home, done: false },
-  ];
+    setTimeline(prev => prev.map(item => {
+      if (item.status === 'Booking Placed') {
+        return { ...item, date: new Date().toLocaleString() };
+      }
+      if (item.status === 'Doctor on the way') {
+        return { ...item, date: new Date().toLocaleString() };
+      }
+      return item;
+    }));
+  }, [toast]);
   
   const handleOtpChange = (element: React.ChangeEvent<HTMLInputElement>, index: number) => {
     if (isNaN(Number(element.target.value))) return;
@@ -67,6 +76,9 @@ export default function OrderTrackingPage() {
         title: "Success!",
         description: "Doctor visit confirmed successfully.",
       });
+       setTimeline(prev => prev.map(item => 
+        item.status === 'Doctor Arrived' ? { ...item, done: true, date: new Date().toLocaleString() } : item
+      ));
     } else {
       toast({
         variant: "destructive",
@@ -81,7 +93,7 @@ export default function OrderTrackingPage() {
       <div className="lg:col-span-2 space-y-8">
         <div>
             <h1 className="text-3xl font-bold tracking-tight font-headline">Booking Tracking</h1>
-            <p className="text-muted-foreground">Booking ID: #{params.id}</p>
+            <p className="text-muted-foreground">Booking ID: #{typeof params.id === 'string' ? params.id : ''}</p>
         </div>
         
         <Card>
