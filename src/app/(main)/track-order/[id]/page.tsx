@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Truck, Package, Home, CheckCircle } from 'lucide-react';
+import { Truck, Package, Home, ZoomIn, ZoomOut } from 'lucide-react';
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
@@ -29,6 +29,7 @@ export default function OrderTrackingPage() {
   const searchParams = useSearchParams();
   const itemName = searchParams.get('item');
   const itemPrice = searchParams.get('price');
+  const [zoomLevel, setZoomLevel] = useState(1);
   
   const [timeline, setTimeline] = useState([
     { status: 'Order Placed', date: new Date().toLocaleString(), icon: Package, done: true },
@@ -94,15 +95,24 @@ export default function OrderTrackingPage() {
                 <CardTitle>Live Location</CardTitle>
                 <CardDescription>Track your delivery in real-time.</CardDescription>
             </CardHeader>
-            <CardContent className="p-0 h-96">
+            <CardContent className="p-0 h-96 relative">
                 <div className="relative w-full h-full rounded-b-lg overflow-hidden">
                     <Image
                     src={mapPlaceholder.url}
                     alt="Map placeholder"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300"
+                    style={{ transform: `scale(${zoomLevel})` }}
                     data-ai-hint={mapPlaceholder.hint}
                     />
+                </div>
+                <div className="absolute bottom-4 right-4 flex flex-col gap-2">
+                    <Button size="icon" onClick={() => setZoomLevel(prev => Math.min(prev + 0.2, 3))}>
+                        <ZoomIn className="h-5 w-5" />
+                    </Button>
+                    <Button size="icon" onClick={() => setZoomLevel(prev => Math.max(prev - 0.2, 1))}>
+                        <ZoomOut className="h-5 w-5" />
+                    </Button>
                 </div>
             </CardContent>
         </Card>
