@@ -101,6 +101,36 @@
       "description": "A map showing a delivery route",
       "imageUrl": "https://images.unsplash.com/photo-1717700299588-ee73dc7de1fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYXAlMjBjaXR5fGVufDB8fHx8MTc2NjEzMDYwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "map city"
+    },
+    {
+      "id": "medplus-logo",
+      "description": "MedPlus Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1704204656144-3dd12c110dd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "pharmeasy-logo",
+      "description": "PharmEasy Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1764229119403-42059dac36a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "apollo-logo",
+      "description": "Apollo Pharmacy Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1704204656144-3dd12c110dd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "instamart-logo",
+      "description": "Swiggy Instamart Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1738458786007-03c0c4b7a804?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "zepto-logo",
+      "description": "Zepto Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1596699528543-c2413ccc79f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo brand"
     }
   ]
 }

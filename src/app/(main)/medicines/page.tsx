@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Search, Plus } from "lucide-react";
 import { medicines } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { useState } from "react";
 
 function getImageUrl(id: string) {
   const image = PlaceHolderImages.find((img) => img.id === id);
@@ -12,6 +14,12 @@ function getImageUrl(id: string) {
 }
 
 export default function MedicinesPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredMedicines = medicines.filter(medicine => 
+    medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="flex flex-col gap-8">
       <div>
@@ -20,10 +28,15 @@ export default function MedicinesPage() {
       </div>
       <div className="relative">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-        <Input placeholder="Search for medicines..." className="pl-8" />
+        <Input 
+          placeholder="Search for medicines..." 
+          className="pl-8" 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {medicines.map((medicine) => {
+        {filteredMedicines.map((medicine) => {
           const { url, hint } = getImageUrl(medicine.image);
           return (
             <Card key={medicine.id} className="flex flex-col">
@@ -43,7 +56,7 @@ export default function MedicinesPage() {
                 <p className="text-sm text-muted-foreground">{medicine.description}</p>
               </CardContent>
               <CardFooter className="flex justify-between items-center">
-                <p className="font-bold text-lg">${medicine.price.toFixed(2)}</p>
+                <p className="font-bold text-lg">₹{medicine.price.toFixed(2)}</p>
                 <Button>
                   <Plus className="mr-2 h-4 w-4" /> Add to Cart
                 </Button>

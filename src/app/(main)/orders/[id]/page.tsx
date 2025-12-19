@@ -94,25 +94,25 @@ export default function OrderTrackingPage({ params }: { params: { id: string } }
           <CardContent className="space-y-4">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Paracetamol 500mg (x1)</span>
-              <span>$2.50</span>
+              <span>₹20.50</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Fresh Milk (1L) (x2)</span>
-              <span>$3.00</span>
+              <span>₹101.00</span>
             </div>
             <Separator />
             <div className="flex justify-between">
               <span className="text-muted-foreground">Subtotal</span>
-              <span>$5.50</span>
+              <span>₹121.50</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Delivery Fee</span>
-              <span>$1.00</span>
+              <span>₹10.00</span>
             </div>
             <Separator />
             <div className="flex justify-between font-bold">
               <span>Total</span>
-              <span>$6.50</span>
+              <span>₹131.50</span>
             </div>
           </CardContent>
           <CardFooter>

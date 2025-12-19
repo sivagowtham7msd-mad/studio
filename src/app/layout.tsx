@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'StreetVerse',
+  title: 'All in one app',
   description: 'Hyperlocal Ordering and Services',
 };
 
