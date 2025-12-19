@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 
 export default function ProfilePage() {
     return (
-        <div className="flex flex-col gap-8 max-w-2xl mx-auto">
+        <div className="flex flex-col gap-8 max-w-2xl mx-auto animate-in fade-in-0 duration-500">
             <div>
                 <h1 className="text-3xl font-bold tracking-tight font-headline">My Profile</h1>
                 <p className="text-muted-foreground">Manage your account settings and personal information.</p>

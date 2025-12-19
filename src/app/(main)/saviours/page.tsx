@@ -20,7 +20,7 @@ export default function SavioursPage() {
   const grocerySaviours = saviours.filter(s => s.category === 'Grocery');
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Our Saviours</h1>
         <p className="text-muted-foreground">Meet the partners who help us serve you across India.</p>
@@ -61,7 +61,7 @@ export default function SavioursPage() {
                         {medicineSaviours.map((saviour) => {
                         const { url, hint } = getImageUrl(saviour.logo);
                         return (
-                            <Card key={saviour.id}>
+                            <Card key={saviour.id} className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
                             <CardHeader className="flex flex-row items-center gap-4">
                                 <Image
                                     src={url}
@@ -89,7 +89,7 @@ export default function SavioursPage() {
                     {grocerySaviours.map((saviour) => {
                         const { url, hint } = getImageUrl(saviour.logo);
                         return (
-                            <Card key={saviour.id}>
+                            <Card key={saviour.id} className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
                             <CardHeader className="flex flex-row items-center gap-4">
                                 <Image
                                     src={url}

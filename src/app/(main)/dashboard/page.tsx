@@ -31,7 +31,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Welcome to All in one app</h1>
         <p className="text-muted-foreground">Your all-in-one platform for local services and opportunities.</p>
@@ -39,7 +39,7 @@ export default function Dashboard() {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => (
           <Link href={service.href} key={service.title} className="block h-full">
-            <Card className="group flex flex-col justify-between h-full hover:border-primary transition-colors duration-300">
+            <Card className="group flex flex-col justify-between h-full hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-lg">
               <div>
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-accent">

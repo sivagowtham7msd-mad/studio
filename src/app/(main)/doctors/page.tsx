@@ -20,7 +20,7 @@ export default function DoctorsPage() {
   const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Book a Mobile Doctor</h1>
         <p className="text-muted-foreground">Select a doctor and choose a location for their visit.</p>
@@ -32,7 +32,7 @@ export default function DoctorsPage() {
             {doctors.map((doctor) => {
               const { url, hint } = getImageUrl(doctor.image);
               return (
-                <Card key={doctor.id} className="flex items-center p-4">
+                <Card key={doctor.id} className="flex items-center p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   <Avatar className="h-16 w-16 mr-4">
                     <AvatarImage src={url} alt={doctor.name} data-ai-hint={hint} />
                     <AvatarFallback>{doctor.name.charAt(0)}</AvatarFallback>
