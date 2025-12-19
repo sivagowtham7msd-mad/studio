@@ -1,3 +1,4 @@
+
 export type Doctor = {
   id: string;
   name: string;
@@ -68,7 +69,7 @@ export const jobs: Job[] = [
 export const saviours: Saviour[] = [
   { id: 'saviour1', name: 'MedPlus', logo: 'medplus-logo', description: 'Trusted pharmacy for all your medical needs.', category: 'Medicine' },
   { id: 'saviour2', name: 'PharmEasy', logo: 'pharmeasy-logo', description: 'Your one-stop shop for medicines and healthcare products.', category: 'Medicine' },
-  { id'saviour3', name: 'Apollo Pharmacy', logo: 'apollo-logo', description: 'Part of Apollo Hospitals Group, offering genuine medicines.', category: 'Medicine' },
+  { id: 'saviour3', name: 'Apollo Pharmacy', logo: 'apollo-logo', description: 'Part of Apollo Hospitals Group, offering genuine medicines.', category: 'Medicine' },
   { id: 'saviour4', name: 'Swiggy Instamart', logo: 'instamart-logo', description: 'Instant grocery delivery at your doorstep.', category: 'Grocery' },
   { id: 'saviour5', name: 'Zepto', logo: 'zepto-logo', description: '10-minute grocery delivery service.', category: 'Grocery' },
 ]
