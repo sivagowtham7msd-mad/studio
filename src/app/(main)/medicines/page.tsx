@@ -3,10 +3,22 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search, Plus } from "lucide-react";
-import { medicines } from "@/lib/data";
+import { Search, Plus, CreditCard, Wallet } from "lucide-react";
+import { medicines, type Product } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 function getImageUrl(id: string) {
   const image = PlaceHolderImages.find((img) => img.id === id);
@@ -14,11 +26,24 @@ function getImageUrl(id: string) {
 }
 
 export default function MedicinesPage() {
+  const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const filteredMedicines = medicines.filter(medicine => 
     medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleAddToCart = (product: Product) => {
+    setSelectedProduct(product);
+  };
+  
+  const handlePayment = () => {
+    toast({
+        title: "Order Placed!",
+        description: `Your order for ${selectedProduct?.name} has been placed successfully.`,
+    });
+  }
 
   return (
     <div className="flex flex-col gap-8">
@@ -57,7 +82,7 @@ export default function MedicinesPage() {
               </CardContent>
               <CardFooter className="flex justify-between items-center">
                 <p className="font-bold text-lg">₹{medicine.price.toFixed(2)}</p>
-                <Button>
+                <Button onClick={() => handleAddToCart(medicine)}>
                   <Plus className="mr-2 h-4 w-4" /> Add to Cart
                 </Button>
               </CardFooter>
@@ -65,6 +90,45 @@ export default function MedicinesPage() {
           );
         })}
       </div>
+      
+      {selectedProduct && (
+        <Dialog open={!!selectedProduct} onOpenChange={(isOpen) => !isOpen && setSelectedProduct(null)}>
+            <DialogContent>
+                <DialogHeader>
+                <DialogTitle>Select Payment Method</DialogTitle>
+                <DialogDescription>
+                    You are ordering {selectedProduct.name} for ₹{selectedProduct.price.toFixed(2)}.
+                </DialogDescription>
+                </DialogHeader>
+                <RadioGroup defaultValue="cod" className="grid grid-cols-2 gap-4">
+                  <div>
+                    <RadioGroupItem value="cod" id="cod" className="peer sr-only" />
+                    <Label
+                      htmlFor="cod"
+                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    >
+                      <Wallet className="mb-3 h-6 w-6" />
+                      Cash on Delivery
+                    </Label>
+                  </div>
+                  <div>
+                    <RadioGroupItem value="online" id="online" className="peer sr-only" />
+                    <Label
+                      htmlFor="online"
+                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    >
+                      <CreditCard className="mb-3 h-6 w-6" />
+                      Banking Apps
+                    </Label>
+                  </div>
+                </RadioGroup>
+                <DialogFooter>
+                    <Button onClick={handlePayment} className='w-full'>Proceed</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+      )}
+
     </div>
   );
 }
