@@ -14,11 +14,11 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 
 function getImageUrl(id: string) {
@@ -28,6 +28,7 @@ function getImageUrl(id: string) {
 
 export default function GroceriesPage() {
   const { toast } = useToast();
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
@@ -44,6 +45,8 @@ export default function GroceriesPage() {
         title: "Order Placed!",
         description: `Your order for ${selectedProduct?.name} has been placed successfully.`,
     });
+    const orderId = `groc-${Math.random().toString(36).substring(2, 9)}`;
+    router.push(`/track-order/${orderId}?item=${selectedProduct?.name}&price=${selectedProduct?.price}`);
   }
 
   return (
