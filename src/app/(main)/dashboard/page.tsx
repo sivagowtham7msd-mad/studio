@@ -23,7 +23,7 @@ export default function Dashboard() {
       icon: ShoppingCart,
     },
     {
-      title: "Find Saviour Jobs",
+      title: "Find Local Jobs",
       description: "Explore local and national job vacancies.",
       href: "/jobs",
       icon: Briefcase,
@@ -33,7 +33,7 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Welcome to All in one app</h1>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">Welcome to CivicConnect</h1>
         <p className="text-muted-foreground">Your all-in-one platform for local services and opportunities.</p>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

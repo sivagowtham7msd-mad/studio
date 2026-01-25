@@ -153,11 +153,11 @@ export function MainNav() {
           <SidebarMenuButton
             asChild
             isActive={isActive('/saviours')}
-            tooltip="Our Saviours"
+            tooltip="Our Partners"
           >
             <Link href="/saviours">
               <Handshake />
-              <span>Our Saviours</span>
+              <span>Our Partners</span>
             </Link>
           </SidebarMenuButton>
         </SidebarMenuItem>

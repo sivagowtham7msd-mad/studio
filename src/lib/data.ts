@@ -27,7 +27,7 @@ export type Job = {
   description: string;
 };
 
-export type Saviour = {
+export type Partner = {
   id: string;
   name: string;
   logo: string;
@@ -61,12 +61,12 @@ export const groceries: Product[] = [
 ];
 
 export const jobs: Job[] = [
-    { id: 'job1', title: 'Delivery Saviour', company: 'All in one app', location: 'Nationwide', type: 'Part-time', postedDate: '2 days ago', description: 'Flexible delivery job for our platform.' },
+    { id: 'job1', title: 'Delivery Driver', company: 'CivicConnect', location: 'Nationwide', type: 'Part-time', postedDate: '2 days ago', description: 'Flexible delivery job for our platform.' },
     { id: 'job2', title: 'Customer Support', company: 'LocalMart', location: 'Mumbai, MH', type: 'Full-time', postedDate: '5 days ago', description: 'Assist customers with orders and inquiries.' },
     { id: 'job3', title: 'Warehouse Associate', company: 'QuickMeds', location: 'Chicago, IL', type: 'Full-time', postedDate: '1 week ago', description: 'Manage inventory and pack orders.' },
 ];
 
-export const saviours: Saviour[] = [
+export const partners: Partner[] = [
   { id: 'saviour1', name: 'MedPlus', logo: 'medplus-logo', description: 'Trusted pharmacy for all your medical needs.', category: 'Medicine' },
   { id: 'saviour2', name: 'PharmEasy', logo: 'pharmeasy-logo', description: 'Your one-stop shop for medicines and healthcare products.', category: 'Medicine' },
   { id: 'saviour3', name: 'Apollo Pharmacy', logo: 'apollo-logo', description: 'Part of Apollo Hospitals Group, offering genuine medicines.', category: 'Medicine' },

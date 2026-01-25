@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { saviours } from "@/lib/data";
+import { partners } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -16,13 +16,13 @@ function getImageUrl(id: string) {
 const indiaMapPlaceholder = getImageUrl('india-map');
 
 export default function SavioursPage() {
-  const medicineSaviours = saviours.filter(s => s.category === 'Medicine');
-  const grocerySaviours = saviours.filter(s => s.category === 'Grocery');
+  const medicinePartners = partners.filter(s => s.category === 'Medicine');
+  const groceryPartners = partners.filter(s => s.category === 'Grocery');
 
   return (
     <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Our Saviours</h1>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">Our Partners</h1>
         <p className="text-muted-foreground">Meet the partners who help us serve you across India.</p>
       </div>
       
@@ -46,7 +46,7 @@ export default function SavioursPage() {
                             <div className="absolute inset-0 bg-black/20 flex items-center justify-center flex-col text-white p-4 text-center">
                                 <MapPin className="w-12 h-12 mb-4" />
                                 <h3 className="text-xl font-bold">Serving Nationwide</h3>
-                                <p>Our saviours are available across the country.</p>
+                                <p>Our partners are available across the country.</p>
                             </div>
                         </div>
                     </CardContent>
@@ -58,26 +58,26 @@ export default function SavioursPage() {
                     </TabsList>
                     <TabsContent value="medicine" className="mt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {medicineSaviours.map((saviour) => {
-                        const { url, hint } = getImageUrl(saviour.logo);
+                        {medicinePartners.map((partner) => {
+                        const { url, hint } = getImageUrl(partner.logo);
                         return (
-                            <Card key={saviour.id} className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                            <Card key={partner.id} className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
                             <CardHeader className="flex flex-row items-center gap-4">
                                 <Image
                                     src={url}
-                                    alt={`${saviour.name} logo`}
+                                    alt={`${partner.name} logo`}
                                     width={64}
                                     height={64}
                                     className="rounded-lg object-contain"
                                     data-ai-hint={hint}
                                 />
                                 <div>
-                                <CardTitle>{saviour.name}</CardTitle>
-                                <Badge variant="secondary">{saviour.category}</Badge>
+                                <CardTitle>{partner.name}</CardTitle>
+                                <Badge variant="secondary">{partner.category}</Badge>
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <CardDescription>{saviour.description}</CardDescription>
+                                <CardDescription>{partner.description}</CardDescription>
                             </CardContent>
                             </Card>
                         );
@@ -86,26 +86,26 @@ export default function SavioursPage() {
                     </TabsContent>
                     <TabsContent value="grocery" className="mt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {grocerySaviours.map((saviour) => {
-                        const { url, hint } = getImageUrl(saviour.logo);
+                    {groceryPartners.map((partner) => {
+                        const { url, hint } = getImageUrl(partner.logo);
                         return (
-                            <Card key={saviour.id} className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                            <Card key={partner.id} className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
                             <CardHeader className="flex flex-row items-center gap-4">
                                 <Image
                                     src={url}
-                                    alt={`${saviour.name} logo`}
+                                    alt={`${partner.name} logo`}
                                     width={64}
                                     height={64}
                                     className="rounded-lg object-contain"
                                     data-ai-hint={hint}
                                 />
                                 <div>
-                                <CardTitle>{saviour.name}</CardTitle>
-                                <Badge variant="secondary">{saviour.category}</Badge>
+                                <CardTitle>{partner.name}</CardTitle>
+                                <Badge variant="secondary">{partner.category}</Badge>
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <CardDescription>{saviour.description}</CardDescription>
+                                <CardDescription>{partner.description}</CardDescription>
                             </CardContent>
                             </Card>
                         );

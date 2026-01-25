@@ -26,7 +26,7 @@ function AppHeaderContent() {
       <Tabs defaultValue="people" className="hidden md:block">
         <TabsList>
           <TabsTrigger value="people">For People</TabsTrigger>
-          <TabsTrigger value="saviours">For Saviours</TabsTrigger>
+          <TabsTrigger value="partners">For Partners</TabsTrigger>
         </TabsList>
       </Tabs>
 

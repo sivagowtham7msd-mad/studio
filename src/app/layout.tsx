@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'All in one app',
-  description: 'Hyperlocal Ordering and Services',
+  title: 'CivicConnect',
+  description: 'Connecting communities with essential services.',
 };
 
 export default function RootLayout({

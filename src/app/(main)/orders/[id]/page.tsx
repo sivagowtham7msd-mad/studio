@@ -117,7 +117,7 @@ export default function OrderTrackingPage() {
             </div>
           </CardContent>
           <CardFooter className='flex-col items-start gap-4'>
-            <p className='text-sm text-muted-foreground'>Enter the One-Time Password (OTP) from the Saviour to confirm the visit.</p>
+            <p className='text-sm text-muted-foreground'>Enter the One-Time Password (OTP) from the service provider to confirm the visit.</p>
             <div className='flex gap-2'>
               {otp.map((data, index) => {
                 return (

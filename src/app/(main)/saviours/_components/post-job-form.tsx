@@ -62,12 +62,12 @@ export function PostJobForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="jobTitle">Job Title</Label>
-              <Input id="jobTitle" {...register('jobTitle')} placeholder="e.g., Delivery Saviour" />
+              <Input id="jobTitle" {...register('jobTitle')} placeholder="e.g., Delivery Driver" />
               {errors.jobTitle && <p className="text-sm text-destructive">{errors.jobTitle.message}</p>}
             </div>
             <div className="space-y-2">
               <Label htmlFor="companyName">Company Name</Label>
-              <Input id="companyName" {...register('companyName')} placeholder="e.g., All in one app" />
+              <Input id="companyName" {...register('companyName')} placeholder="e.g., CivicConnect" />
               {errors.companyName && <p className="text-sm text-destructive">{errors.companyName.message}</p>}
             </div>
           </div>
