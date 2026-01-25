@@ -96,7 +96,7 @@ export default function OrderTrackingPage() {
   };
 
   return (
-    <div className="grid gap-8 lg:grid-cols-3">
+    <div className="grid gap-8 lg:grid-cols-3 animate-fade-in-up">
       <div className="lg:col-span-2 space-y-8">
         <div>
             <h1 className="text-3xl font-bold tracking-tight font-headline">Booking Tracking</h1>

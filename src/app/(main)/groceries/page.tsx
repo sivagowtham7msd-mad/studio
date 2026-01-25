@@ -43,7 +43,7 @@ export default function GroceriesPage() {
   }
 
   return (
-    <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
+    <div className="flex flex-col gap-8 animate-fade-in-up">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Shop Groceries</h1>
         <p className="text-muted-foreground">Fresh produce and daily essentials delivered to your door.</p>
@@ -61,7 +61,7 @@ export default function GroceriesPage() {
         {filteredGroceries.map((grocery) => {
           const { url, hint } = getImageUrl(grocery.image);
           return (
-            <Card key={grocery.id} className="flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Card key={grocery.id} className="flex flex-col transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
               <CardHeader className="p-0">
                 <div className="relative w-full h-48">
                   <Image

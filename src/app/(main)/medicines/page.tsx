@@ -42,7 +42,7 @@ export default function MedicinesPage() {
   }
 
   return (
-    <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
+    <div className="flex flex-col gap-8 animate-fade-in-up">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Order Medicines</h1>
         <p className="text-muted-foreground">Search and order from a wide range of medicines.</p>
@@ -60,7 +60,7 @@ export default function MedicinesPage() {
         {filteredMedicines.map((medicine) => {
           const { url, hint } = getImageUrl(medicine.image);
           return (
-            <Card key={medicine.id} className="flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Card key={medicine.id} className="flex flex-col transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
               <CardHeader className="p-0">
                 <div className="relative w-full h-48">
                   <Image

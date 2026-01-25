@@ -50,14 +50,14 @@ export function PaymentDialog({ product, open, onOpenChange, onProceed }: Paymen
           You are ordering {product.name} for ₹{product.price.toFixed(2)}.
         </DialogDescription>
       </DialogHeader>
-      <RadioGroup defaultValue="cod" onValueChange={setPaymentMethod} className="grid grid-cols-2 gap-4">
+      <RadioGroup defaultValue="cod" onValueChange={setPaymentMethod} className="grid grid-cols-2 gap-4 my-4">
         <div>
           <RadioGroupItem value="cod" id="cod" className="peer sr-only" />
           <Label
             htmlFor="cod"
-            className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary h-full"
+            className="flex flex-col items-center justify-center text-center rounded-lg border-2 bg-popover p-4 transition-all duration-300 hover:shadow-md hover:border-primary peer-data-[state=checked]:border-primary peer-data-[state=checked]:shadow-lg peer-data-[state=checked]:bg-accent h-full font-medium"
           >
-            <Wallet className="mb-3 h-6 w-6" />
+            <Wallet className="mb-3 h-8 w-8" />
             Pay Cash After Service
           </Label>
         </div>
@@ -65,9 +65,9 @@ export function PaymentDialog({ product, open, onOpenChange, onProceed }: Paymen
           <RadioGroupItem value="online" id="online" className="peer sr-only" />
           <Label
             htmlFor="online"
-            className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary h-full"
+            className="flex flex-col items-center justify-center text-center rounded-lg border-2 bg-popover p-4 transition-all duration-300 hover:shadow-md hover:border-primary peer-data-[state=checked]:border-primary peer-data-[state=checked]:shadow-lg peer-data-[state=checked]:bg-accent h-full font-medium"
           >
-            <CreditCard className="mb-3 h-6 w-6" />
+            <CreditCard className="mb-3 h-8 w-8" />
             Pay Through UPI / Banking
           </Label>
         </div>

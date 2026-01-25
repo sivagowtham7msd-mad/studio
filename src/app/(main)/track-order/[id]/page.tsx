@@ -41,20 +41,23 @@ export default function OrderTrackingPage() {
 
   useEffect(() => {
     // Set initial date on client
+    const orderPlacedDate = new Date();
     setTimeline(prev => prev.map(item => 
-      item.status === 'Order Placed' ? { ...item, done: true, date: new Date().toLocaleString() } : item
+      item.status === 'Order Placed' ? { ...item, done: true, date: orderPlacedDate.toLocaleString() } : item
     ));
 
     const deliveryTimeout = setTimeout(() => {
+      const outForDeliveryDate = new Date();
       setTimeline(prev => prev.map(item => 
-        item.status === 'Out for Delivery' ? { ...item, done: true, date: new Date().toLocaleString() } : item
+        item.status === 'Out for Delivery' ? { ...item, done: true, date: outForDeliveryDate.toLocaleString() } : item
       ));
       setDeliveryPosition({ top: '40%', left: '50%' }); // Move to midpoint
     }, 5000); // Simulate 5 seconds to go out for delivery
 
     const deliveredTimeout = setTimeout(() => {
+      const deliveredDate = new Date();
       setTimeline(prev => prev.map(item => 
-        item.status === 'Delivered' ? { ...item, done: true, date: new Date().toLocaleString() } : item
+        item.status === 'Delivered' ? { ...item, done: true, date: deliveredDate.toLocaleString() } : item
       ));
       setDeliveryPosition({ top: '75%', left: '80%' }); // Move to destination
     }, 10000); // Simulate 10 seconds to be delivered
@@ -80,7 +83,7 @@ export default function OrderTrackingPage() {
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-3">
+    <div className="grid gap-8 lg:grid-cols-3 animate-fade-in-up">
       <div className="lg:col-span-2 space-y-8">
         <div>
             <h1 className="text-3xl font-bold tracking-tight font-headline">Order Tracking</h1>

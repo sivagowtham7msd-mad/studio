@@ -31,7 +31,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="flex flex-col gap-8 animate-in fade-in-0 duration-500">
+    <div className="flex flex-col gap-8 animate-fade-in-up">
       <div>
         <h1 className="text-3xl font-bold tracking-tight font-headline">Welcome to CivicConnect</h1>
         <p className="text-muted-foreground">Your all-in-one platform for local services and opportunities.</p>
@@ -39,7 +39,7 @@ export default function Dashboard() {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => (
           <Link href={service.href} key={service.title} className="block h-full">
-            <Card className="group flex flex-col justify-between h-full hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Card className="group flex flex-col justify-between h-full transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-xl hover:border-primary border-2 border-transparent">
               <div>
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-accent">
