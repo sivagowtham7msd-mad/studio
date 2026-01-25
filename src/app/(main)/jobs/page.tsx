@@ -10,12 +10,15 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Search } from 'lucide-react';
+import { Search, MapPin } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
+import { Separator } from '@/components/ui/separator';
 
 export default function JobsPage() {
   const [jobs, setJobs] = useState<Job[]>(allJobs);
   const [location, setLocation] = useState('');
   const [filteredJobs, setFilteredJobs] = useState<Job[]>(allJobs);
+  const { toast } = useToast();
 
   const handleSearch = () => {
     if (location.trim() === '') {
@@ -26,6 +29,36 @@ export default function JobsPage() {
         job.location.toLowerCase().includes(lowerCaseLocation)
       );
       setFilteredJobs(results);
+    }
+  };
+
+  const handleUseMyLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          toast({
+            title: "Location Found!",
+            description: `Using your current location to find jobs.`,
+          });
+          // In a real app, you would use a geocoding service to convert lat/lon to a location name.
+          // For this demo, we'll just show a success message.
+        },
+        (error) => {
+          toast({
+            variant: "destructive",
+            title: "Could not get location",
+            description: "Please ensure you have granted location permissions in your browser.",
+          });
+          console.error("Geolocation error:", error);
+        }
+      );
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Geolocation not supported",
+        description: "Your browser does not support geolocation.",
+      });
     }
   };
 
@@ -51,7 +84,7 @@ export default function JobsPage() {
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Find Jobs by Location</DialogTitle>
-                    <DialogDescription>Enter a state or district to find jobs near you.</DialogDescription>
+                    <DialogDescription>Enter a state or district to find jobs near you, or use your current location.</DialogDescription>
                   </DialogHeader>
                   <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
@@ -66,6 +99,14 @@ export default function JobsPage() {
                         placeholder="e.g., Chennai or Tamil Nadu"
                       />
                     </div>
+                    <div className="relative my-2">
+                      <Separator />
+                      <span className="absolute left-1/2 -translate-x-1/2 -top-2.5 bg-background px-2 text-xs text-muted-foreground">OR</span>
+                    </div>
+                     <Button variant="outline" onClick={handleUseMyLocation}>
+                      <MapPin className="mr-2 h-4 w-4" />
+                      Use My Current Location
+                    </Button>
                   </div>
                   <DialogFooter>
                     <Button onClick={handleSearch}>Search</Button>
