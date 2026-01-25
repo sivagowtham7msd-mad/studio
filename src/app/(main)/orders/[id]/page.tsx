@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Truck, Package, Home, CheckCircle, ZoomIn, ZoomOut } from 'lucide-react';
+import { Truck, Package, Home, CheckCircle, ZoomIn, ZoomOut, Stethoscope } from 'lucide-react';
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
@@ -31,9 +31,10 @@ export default function OrderTrackingPage() {
   const [otp, setOtp] = useState<string[]>(Array(4).fill(""));
   const [generatedOtp, setGeneratedOtp] = useState<string>("");
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [doctorPosition, setDoctorPosition] = useState({ top: '15%', left: '20%' });
   const [timeline, setTimeline] = useState([
-    { status: 'Booking Placed', date: '', icon: Package, done: true },
-    { status: 'Doctor on the way', date: '', icon: Truck, done: true },
+    { status: 'Booking Placed', date: '', icon: Package, done: false },
+    { status: 'Doctor on the way', date: '', icon: Truck, done: false },
     { status: 'Doctor Arrived', date: 'Awaiting Confirmation', icon: Home, done: false },
   ]);
 
@@ -47,15 +48,20 @@ export default function OrderTrackingPage() {
       description: `Your OTP for the doctor's visit is ${newOtp}.`,
     });
 
-    setTimeline(prev => prev.map(item => {
-      if (item.status === 'Booking Placed') {
-        return { ...item, date: new Date().toLocaleString() };
-      }
-      if (item.status === 'Doctor on the way') {
-        return { ...item, date: new Date().toLocaleString() };
-      }
-      return item;
-    }));
+    setTimeline(prev => prev.map(item => 
+      item.status === 'Booking Placed' ? { ...item, done: true, date: new Date().toLocaleString() } : item
+    ));
+
+    const doctorOnTheWayTimeout = setTimeout(() => {
+        setTimeline(prev => prev.map(item => 
+            item.status === 'Doctor on the way' ? { ...item, done: true, date: new Date().toLocaleString() } : item
+        ));
+        setDoctorPosition({ top: '40%', left: '50%' });
+    }, 5000); // 5 seconds
+
+    return () => {
+        clearTimeout(doctorOnTheWayTimeout);
+    };
   }, [toast]);
   
   const handleOtpChange = (element: React.ChangeEvent<HTMLInputElement>, index: number) => {
@@ -79,6 +85,7 @@ export default function OrderTrackingPage() {
        setTimeline(prev => prev.map(item => 
         item.status === 'Doctor Arrived' ? { ...item, done: true, date: new Date().toLocaleString() } : item
       ));
+      setDoctorPosition({ top: '75%', left: '80%' }); // Doctor at destination
     } else {
       toast({
         variant: "destructive",
@@ -153,6 +160,20 @@ export default function OrderTrackingPage() {
                     style={{ transform: `scale(${zoomLevel})` }}
                     data-ai-hint={mapPlaceholder.hint}
                     />
+                     {/* Doctor Icon */}
+                    <div 
+                        className="absolute p-2 bg-primary rounded-full text-primary-foreground transition-all duration-1000 ease-in-out"
+                        style={{ top: doctorPosition.top, left: doctorPosition.left }}
+                    >
+                        <Stethoscope className="h-5 w-5" />
+                    </div>
+                    {/* Home Icon */}
+                    <div 
+                        className="absolute p-2 bg-secondary rounded-full text-secondary-foreground"
+                        style={{ top: '75%', left: '80%' }}
+                    >
+                        <Home className="h-5 w-5" />
+                    </div>
                 </div>
                 <div className="absolute bottom-4 right-4 flex flex-col gap-2">
                     <Button size="icon" onClick={() => setZoomLevel(prev => Math.min(prev + 0.2, 3))}>

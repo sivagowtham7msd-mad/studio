@@ -31,9 +31,10 @@ export default function OrderTrackingPage() {
   const itemPrice = searchParams.get('price');
   const paymentMethod = searchParams.get('paymentMethod');
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [deliveryPosition, setDeliveryPosition] = useState({ top: '15%', left: '20%' });
   
   const [timeline, setTimeline] = useState([
-    { status: 'Order Placed', date: '', icon: Package, done: true },
+    { status: 'Order Placed', date: '', icon: Package, done: false },
     { status: 'Out for Delivery', date: 'In progress...', icon: Truck, done: false },
     { status: 'Delivered', date: 'Awaiting delivery', icon: Home, done: false },
   ]);
@@ -41,19 +42,21 @@ export default function OrderTrackingPage() {
   useEffect(() => {
     // Set initial date on client
     setTimeline(prev => prev.map(item => 
-      item.status === 'Order Placed' ? { ...item, date: new Date().toLocaleString() } : item
+      item.status === 'Order Placed' ? { ...item, done: true, date: new Date().toLocaleString() } : item
     ));
 
     const deliveryTimeout = setTimeout(() => {
       setTimeline(prev => prev.map(item => 
         item.status === 'Out for Delivery' ? { ...item, done: true, date: new Date().toLocaleString() } : item
       ));
+      setDeliveryPosition({ top: '40%', left: '50%' }); // Move to midpoint
     }, 5000); // Simulate 5 seconds to go out for delivery
 
     const deliveredTimeout = setTimeout(() => {
       setTimeline(prev => prev.map(item => 
         item.status === 'Delivered' ? { ...item, done: true, date: new Date().toLocaleString() } : item
       ));
+      setDeliveryPosition({ top: '75%', left: '80%' }); // Move to destination
     }, 10000); // Simulate 10 seconds to be delivered
 
     return () => {
@@ -121,6 +124,20 @@ export default function OrderTrackingPage() {
                     style={{ transform: `scale(${zoomLevel})` }}
                     data-ai-hint={mapPlaceholder.hint}
                     />
+                    {/* Delivery Person Icon */}
+                    <div 
+                        className="absolute p-2 bg-primary rounded-full text-primary-foreground transition-all duration-1000 ease-in-out"
+                        style={{ top: deliveryPosition.top, left: deliveryPosition.left }}
+                    >
+                        <Truck className="h-5 w-5" />
+                    </div>
+                    {/* Home Icon */}
+                    <div 
+                        className="absolute p-2 bg-secondary rounded-full text-secondary-foreground"
+                        style={{ top: '75%', left: '80%' }}
+                    >
+                        <Home className="h-5 w-5" />
+                    </div>
                 </div>
                 <div className="absolute bottom-4 right-4 flex flex-col gap-2">
                     <Button size="icon" onClick={() => setZoomLevel(prev => Math.min(prev + 0.2, 3))}>
