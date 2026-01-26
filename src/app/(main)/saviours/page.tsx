@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { MapPin } from "lucide-react";
 import { PostJobForm } from "./_components/post-job-form";
+import { useEffect, useState } from "react";
 
 function getImageUrl(id: string) {
   const image = PlaceHolderImages.find((img) => img.id === id);
@@ -16,8 +17,18 @@ function getImageUrl(id: string) {
 const indiaMapPlaceholder = getImageUrl('india-map');
 
 export default function SavioursPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const medicinePartners = partners.filter(s => s.category === 'Medicine');
   const groceryPartners = partners.filter(s => s.category === 'Grocery');
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col gap-8 animate-fade-in-up">

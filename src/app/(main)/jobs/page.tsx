@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { JobDescriptionGenerator } from "./_components/job-description-generator";
 import { JobSearchSummary } from "./_components/job-search-summary";
@@ -19,6 +19,11 @@ export default function JobsPage() {
   const [location, setLocation] = useState('');
   const [filteredJobs, setFilteredJobs] = useState<Job[]>(allJobs);
   const { toast } = useToast();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleSearch = () => {
     if (location.trim() === '') {
@@ -61,6 +66,10 @@ export default function JobsPage() {
       });
     }
   };
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col gap-8 animate-fade-in-up">
