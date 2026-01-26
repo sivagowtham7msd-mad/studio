@@ -137,6 +137,54 @@
       "description": "Zepto Logo",
       "imageUrl": "https://images.unsplash.com/photo-1596699528543-c2413ccc79f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "delivery logo"
+    },
+    {
+      "id": "medicine7",
+      "description": "Aspirin pills",
+      "imageUrl": "https://images.unsplash.com/photo-1612110520339-d83941ba2b9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhc3BpcmluJTIwcGlsbHN8ZW58MHx8fHwxNzY5NDE4NzcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "aspirin pills"
+    },
+    {
+      "id": "medicine8",
+      "description": "Multivitamin bottle",
+      "imageUrl": "https://images.unsplash.com/photo-1687200267568-43c73323c50f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx2aXRhbWluJTIwYm90dGxlfGVufDB8fHx8MTc2OTQxODc3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vitamin bottle"
+    },
+    {
+      "id": "medicine9",
+      "description": "Eye drops bottle",
+      "imageUrl": "https://images.unsplash.com/photo-1662274716448-a9ffe18c6c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxleWUlMjBkcm9wc3xlbnwwfHx8fDE3NjkzMDk2Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "eye drops"
+    },
+    {
+      "id": "medicine10",
+      "description": "Pain relief gel tube",
+      "imageUrl": "https://images.unsplash.com/photo-1637930030080-4ec4b95914c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvaW50bWVudCUyMHR1YmV8ZW58MHx8fHwxNzY5Mzk4ODQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ointment tube"
+    },
+    {
+      "id": "grocery7",
+      "description": "A pile of onions",
+      "imageUrl": "https://images.unsplash.com/photo-1729292933757-5e9d9e8d4ead?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvbmlvbnMlMjB2ZWdldGFibGV8ZW58MHx8fHwxNzY5NDE4NzcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "onions vegetable"
+    },
+    {
+      "id": "grocery8",
+      "description": "A pile of tomatoes",
+      "imageUrl": "https://images.unsplash.com/photo-1629194252083-d25eb05b67bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0b21hdG9lcyUyMHZlZ2V0YWJsZXxlbnwwfHx8fDE3NjkzMzgxMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tomatoes vegetable"
+    },
+    {
+      "id": "grocery9",
+      "description": "A pile of potatoes",
+      "imageUrl": "https://images.unsplash.com/photo-1649928245542-f50d08b81266?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3RhdG9lcyUyMHZlZ2V0YWJsZXxlbnwwfHx8fDE3Njk0MTg3NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "potatoes vegetable"
+    },
+    {
+      "id": "grocery10",
+      "description": "A bottle of cooking oil",
+      "imageUrl": "https://images.unsplash.com/photo-1625189134246-7528bb3ed239?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b2lsJTIwYm90dGxlfGVufDB8fHx8MTc2OTQxODc3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "oil bottle"
     }
   ]
 }

@@ -49,6 +49,10 @@ export const medicines: Product[] = [
   { id: 'med4', name: 'Cough Syrup', price: 60.00, image: 'medicine4', category: 'Medicine', description: 'Soothes cough and throat irritation.' },
   { id: 'med5', name: 'Vitamin C Tablets', price: 72.25, image: 'medicine5', category: 'Medicine', description: 'Boosts immunity.' },
   { id: 'med6', name: 'Band-Aids (Box of 20)', price: 30.00, image: 'medicine6', category: 'Medicine', description: 'For minor cuts and scrapes.' },
+  { id: 'med7', name: 'Aspirin 75mg', price: 15.00, image: 'medicine7', category: 'Medicine', description: 'Blood thinner and pain reliever.' },
+  { id: 'med8', name: 'Multivitamin Tablets', price: 150.00, image: 'medicine8', category: 'Medicine', description: 'Daily dietary supplement.' },
+  { id: 'med9', name: 'Eye Drops', price: 45.00, image: 'medicine9', category: 'Medicine', description: 'For dry and irritated eyes.' },
+  { id: 'med10', name: 'Pain Relief Gel', price: 85.00, image: 'medicine10', category: 'Medicine', description: 'Topical gel for muscle pain.' },
 ];
 
 export const groceries: Product[] = [
@@ -58,6 +62,10 @@ export const groceries: Product[] = [
   { id: 'groc4', name: 'Free-range Eggs (12)', price: 80.80, image: 'grocery4', category: 'Grocery', description: 'Farm-fresh free-range eggs.' },
   { id: 'groc5', name: 'Cheddar Cheese (200g)', price: 200.00, image: 'grocery5', category: 'Grocery', description: 'Aged cheddar cheese block.' },
   { id: 'groc6', name: 'Basmati Rice (1kg)', price: 120.00, image: 'grocery6', category: 'Grocery', description: 'Long-grain aromatic basmati rice.' },
+  { id: 'groc7', name: 'Onions (1kg)', price: 30.00, image: 'grocery7', category: 'Grocery', description: 'Fresh red onions.' },
+  { id: 'groc8', name: 'Tomatoes (1kg)', price: 40.00, image: 'grocery8', category: 'Grocery', description: 'Ripe and juicy tomatoes.' },
+  { id: 'groc9', name: 'Potatoes (1kg)', price: 35.00, image: 'grocery9', category: 'Grocery', description: 'Versatile for all your dishes.' },
+  { id: 'groc10', name: 'Sunflower Oil (1L)', price: 180.00, image: 'grocery10', category: 'Grocery', description: 'Refined sunflower cooking oil.' },
 ];
 
 export const jobs: Job[] = [
