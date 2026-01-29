@@ -15,7 +15,6 @@ import { Separator } from '@/components/ui/separator';
 import {
   Briefcase,
   LayoutDashboard,
-  Pill,
   ShoppingCart,
   Stethoscope,
   User,
@@ -73,18 +72,6 @@ export function MainNav() {
             <Link href="/doctors">
               <Stethoscope />
               <span>Book a Doctor</span>
-            </Link>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-        <SidebarMenuItem>
-          <SidebarMenuButton
-            asChild
-            isActive={isActive('/medicines')}
-            tooltip="Order Medicines"
-          >
-            <Link href="/medicines">
-              <Pill />
-              <span>Order Medicines</span>
             </Link>
           </SidebarMenuButton>
         </SidebarMenuItem>

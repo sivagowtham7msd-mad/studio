@@ -25,42 +25,6 @@
       "imageHint": "senior doctor"
     },
     {
-      "id": "medicine1",
-      "description": "A box of paracetamol pills",
-      "imageUrl": "https://images.unsplash.com/photo-1597068596627-717bd7124319?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwaWxscyUyMG1lZGljaW5lfGVufDB8fHx8MTc2NjEyNzk2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pills medicine"
-    },
-    {
-      "id": "medicine2",
-      "description": "A box of ibuprofen pills",
-      "imageUrl": "https://images.unsplash.com/photo-1711985220359-a29722407593?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWRpY2luZSUyMGJveHxlbnwwfHx8fDE3NjYwNjY4MzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "medicine box"
-    },
-    {
-      "id": "medicine3",
-      "description": "A bottle of antacid syrup",
-      "imageUrl": "https://images.unsplash.com/photo-1700104494894-4b03ae4f5953?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzeXJ1cCUyMGJvdHRsZXxlbnwwfHx8fDE3NjYxNTk4MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "syrup bottle"
-    },
-    {
-      "id": "medicine4",
-      "description": "A bottle of cough syrup",
-      "imageUrl": "https://images.unsplash.com/photo-1664216294580-079bc527ae49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2luZSUyMGJvdHRsZXxlbnwwfHx8fDE3NjYxNTk4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "medicine bottle"
-    },
-    {
-      "id": "medicine5",
-      "description": "A bottle of vitamin C tablets",
-      "imageUrl": "https://images.unsplash.com/photo-1722843068552-3f4cf64164f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx2aXRhbWlucyUyMGJvdHRsZXxlbnwwfHx8fDE3NjYwNjQ4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "vitamins bottle"
-    },
-    {
-      "id": "medicine6",
-      "description": "A box of band-aids",
-      "imageUrl": "https://images.unsplash.com/photo-1531054601929-f1ccb3ef57f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxiYW5kJTIwYWlkfGVufDB8fHx8MTc2NjE1OTgyNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "band aid"
-    },
-    {
       "id": "grocery1",
       "description": "A carton of milk",
       "imageUrl": "https://images.unsplash.com/photo-1549127024-18ee7271c819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWlsayUyMGNhcnRvbnxlbnwwfHx8fDE3NjYxMzk4MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -109,24 +73,6 @@
       "imageHint": "India map"
     },
     {
-      "id": "medplus-logo",
-      "description": "MedPlus Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1704204656144-3dd12c110dd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pharmacy logo"
-    },
-    {
-      "id": "pharmeasy-logo",
-      "description": "PharmEasy Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1764229119403-42059dac36a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pharmacy logo"
-    },
-    {
-      "id": "apollo-logo",
-      "description": "Apollo Pharmacy Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1704204656144-3dd12c110dd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pharmacy logo"
-    },
-    {
       "id": "instamart-logo",
       "description": "Swiggy Instamart Logo",
       "imageUrl": "https://images.unsplash.com/photo-1738458786007-03c0c4b7a804?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -137,30 +83,6 @@
       "description": "Zepto Logo",
       "imageUrl": "https://images.unsplash.com/photo-1596699528543-c2413ccc79f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsb2dvJTIwYnJhbmR8ZW58MHx8fHwxNzY2MTE2OTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "delivery logo"
-    },
-    {
-      "id": "medicine7",
-      "description": "Aspirin pills",
-      "imageUrl": "https://images.unsplash.com/photo-1612110520339-d83941ba2b9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhc3BpcmluJTIwcGlsbHN8ZW58MHx8fHwxNzY5NDE4NzcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "aspirin pills"
-    },
-    {
-      "id": "medicine8",
-      "description": "Multivitamin bottle",
-      "imageUrl": "https://images.unsplash.com/photo-1687200267568-43c73323c50f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx2aXRhbWluJTIwYm90dGxlfGVufDB8fHx8MTc2OTQxODc3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "vitamin bottle"
-    },
-    {
-      "id": "medicine9",
-      "description": "Eye drops bottle",
-      "imageUrl": "https://images.unsplash.com/photo-1662274716448-a9ffe18c6c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxleWUlMjBkcm9wc3xlbnwwfHx8fDE3NjkzMDk2Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "eye drops"
-    },
-    {
-      "id": "medicine10",
-      "description": "Pain relief gel tube",
-      "imageUrl": "https://images.unsplash.com/photo-1637930030080-4ec4b95914c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvaW50bWVudCUyMHR1YmV8ZW58MHx8fHwxNzY5Mzk4ODQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ointment tube"
     },
     {
       "id": "grocery7",

@@ -13,7 +13,7 @@ export type Product = {
   name: string;
   price: number;
   image: string;
-  category: 'Medicine' | 'Grocery';
+  category: 'Grocery';
   description: string;
 };
 
@@ -32,7 +32,7 @@ export type Partner = {
   name: string;
   logo: string;
   description: string;
-  category: 'Medicine' | 'Grocery'
+  category: 'Grocery'
 }
 
 export const doctors: Doctor[] = [
@@ -40,19 +40,6 @@ export const doctors: Doctor[] = [
   { id: '2', name: 'Dr. Jane Smith', specialty: 'Pediatrician', rating: 4.9, reviews: 98, image: 'doctor2' },
   { id: '3', name: 'Dr. Emily White', specialty: 'Dermatologist', rating: 4.7, reviews: 75, image: 'doctor3' },
   { id: '4', name: 'Dr. Michael Brown', specialty: 'Cardiologist', rating: 4.9, reviews: 210, image: 'doctor4' },
-];
-
-export const medicines: Product[] = [
-  { id: 'med1', name: 'Paracetamol 500mg', price: 20.50, image: 'medicine1', category: 'Medicine', description: 'For fever and pain relief.' },
-  { id: 'med2', name: 'Ibuprofen 200mg', price: 40.00, image: 'medicine2', category: 'Medicine', description: 'Anti-inflammatory and pain reliever.' },
-  { id: 'med3', name: 'Antacid Syrup', price: 55.50, image: 'medicine3', category: 'Medicine', description: 'Relieves heartburn and indigestion.' },
-  { id: 'med4', name: 'Cough Syrup', price: 60.00, image: 'medicine4', category: 'Medicine', description: 'Soothes cough and throat irritation.' },
-  { id: 'med5', name: 'Vitamin C Tablets', price: 72.25, image: 'medicine5', category: 'Medicine', description: 'Boosts immunity.' },
-  { id: 'med6', name: 'Band-Aids (Box of 20)', price: 30.00, image: 'medicine6', category: 'Medicine', description: 'For minor cuts and scrapes.' },
-  { id: 'med7', name: 'Aspirin 75mg', price: 15.00, image: 'medicine7', category: 'Medicine', description: 'Blood thinner and pain reliever.' },
-  { id: 'med8', name: 'Multivitamin Tablets', price: 150.00, image: 'medicine8', category: 'Medicine', description: 'Daily dietary supplement.' },
-  { id: 'med9', name: 'Eye Drops', price: 45.00, image: 'medicine9', category: 'Medicine', description: 'For dry and irritated eyes.' },
-  { id: 'med10', name: 'Pain Relief Gel', price: 85.00, image: 'medicine10', category: 'Medicine', description: 'Topical gel for muscle pain.' },
 ];
 
 export const groceries: Product[] = [
@@ -75,9 +62,6 @@ export const jobs: Job[] = [
 ];
 
 export const partners: Partner[] = [
-  { id: 'saviour1', name: 'MedPlus', logo: 'medplus-logo', description: 'Trusted pharmacy for all your medical needs.', category: 'Medicine' },
-  { id: 'saviour2', name: 'PharmEasy', logo: 'pharmeasy-logo', description: 'Your one-stop shop for medicines and healthcare products.', category: 'Medicine' },
-  { id: 'saviour3', name: 'Apollo Pharmacy', logo: 'apollo-logo', description: 'Part of Apollo Hospitals Group, offering genuine medicines.', category: 'Medicine' },
   { id: 'saviour4', name: 'Swiggy Instamart', logo: 'instamart-logo', description: 'Instant grocery delivery at your doorstep.', category: 'Grocery' },
   { id: 'saviour5', name: 'Zepto', logo: 'zepto-logo', description: '10-minute grocery delivery service.', category: 'Grocery' },
 ]

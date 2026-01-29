@@ -23,9 +23,6 @@ export default function SavioursPage() {
     setIsClient(true);
   }, []);
 
-  const medicinePartners = partners.filter(s => s.category === 'Medicine');
-  const groceryPartners = partners.filter(s => s.category === 'Grocery');
-
   if (!isClient) {
     return null;
   }
@@ -62,68 +59,35 @@ export default function SavioursPage() {
                         </div>
                     </CardContent>
                 </Card>
-                <Tabs defaultValue="medicine" className="w-full">
-                    <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="medicine">Medicine Partners</TabsTrigger>
-                    <TabsTrigger value="grocery">Grocery Partners</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="medicine" className="mt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {medicinePartners.map((partner) => {
-                        const { url, hint } = getImageUrl(partner.logo);
-                        return (
-                            <Card key={partner.id} className="transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                            <CardHeader className="flex flex-row items-center gap-4">
-                                <Image
-                                    src={url}
-                                    alt={`${partner.name} logo`}
-                                    width={64}
-                                    height={64}
-                                    className="rounded-lg object-contain"
-                                    data-ai-hint={hint}
-                                />
-                                <div>
-                                <CardTitle>{partner.name}</CardTitle>
-                                <Badge variant="secondary">{partner.category}</Badge>
-                                </div>
-                            </CardHeader>
-                            <CardContent>
-                                <CardDescription>{partner.description}</CardDescription>
-                            </CardContent>
-                            </Card>
-                        );
-                        })}
-                    </div>
-                    </TabsContent>
-                    <TabsContent value="grocery" className="mt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {groceryPartners.map((partner) => {
-                        const { url, hint } = getImageUrl(partner.logo);
-                        return (
-                            <Card key={partner.id} className="transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                            <CardHeader className="flex flex-row items-center gap-4">
-                                <Image
-                                    src={url}
-                                    alt={`${partner.name} logo`}
-                                    width={64}
-                                    height={64}
-                                    className="rounded-lg object-contain"
-                                    data-ai-hint={hint}
-                                />
-                                <div>
-                                <CardTitle>{partner.name}</CardTitle>
-                                <Badge variant="secondary">{partner.category}</Badge>
-                                </div>
-                            </CardHeader>
-                            <CardContent>
-                                <CardDescription>{partner.description}</CardDescription>
-                            </CardContent>
-                            </Card>
-                        );
-                        })}
-                    </div>
-                    </TabsContent>
-                </Tabs>
+                <div>
+                  <h2 className="text-2xl font-bold font-headline mb-4">Grocery Partners</h2>
+                  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                      {partners.map((partner) => {
+                      const { url, hint } = getImageUrl(partner.logo);
+                      return (
+                          <Card key={partner.id} className="transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                          <CardHeader className="flex flex-row items-center gap-4">
+                              <Image
+                                  src={url}
+                                  alt={`${partner.name} logo`}
+                                  width={64}
+                                  height={64}
+                                  className="rounded-lg object-contain"
+                                  data-ai-hint={hint}
+                              />
+                              <div>
+                              <CardTitle>{partner.name}</CardTitle>
+                              <Badge variant="secondary">{partner.category}</Badge>
+                              </div>
+                          </CardHeader>
+                          <CardContent>
+                              <CardDescription>{partner.description}</CardDescription>
+                          </CardContent>
+                          </Card>
+                      );
+                      })}
+                  </div>
+                </div>
             </div>
         </TabsContent>
         <TabsContent value="post_job" className="mt-6">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Stethoscope, Pill, ShoppingCart, Briefcase, ArrowRight } from "lucide-react";
+import { Stethoscope, ShoppingCart, Briefcase, ArrowRight } from "lucide-react";
 
 export default function Dashboard() {
   const services = [
@@ -9,12 +9,6 @@ export default function Dashboard() {
       description: "Get medical attention at your doorstep.",
       href: "/doctors",
       icon: Stethoscope,
-    },
-    {
-      title: "Order Medicines",
-      description: "Fast delivery from your local pharmacies.",
-      href: "/medicines",
-      icon: Pill,
     },
     {
       title: "Shop Groceries",
